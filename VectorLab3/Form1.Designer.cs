@@ -41,6 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbOperation = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtMulti = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtXFirst
@@ -93,21 +95,21 @@
             // 
             // txtXResult
             // 
-            this.txtXResult.Location = new System.Drawing.Point(441, 64);
+            this.txtXResult.Location = new System.Drawing.Point(556, 64);
             this.txtXResult.Name = "txtXResult";
             this.txtXResult.Size = new System.Drawing.Size(44, 22);
             this.txtXResult.TabIndex = 6;
             // 
             // txtYResult
             // 
-            this.txtYResult.Location = new System.Drawing.Point(441, 122);
+            this.txtYResult.Location = new System.Drawing.Point(556, 122);
             this.txtYResult.Name = "txtYResult";
             this.txtYResult.Size = new System.Drawing.Size(44, 22);
             this.txtYResult.TabIndex = 7;
             // 
             // txtZResult
             // 
-            this.txtZResult.Location = new System.Drawing.Point(441, 183);
+            this.txtZResult.Location = new System.Drawing.Point(556, 183);
             this.txtZResult.Name = "txtZResult";
             this.txtZResult.Size = new System.Drawing.Size(44, 22);
             this.txtZResult.TabIndex = 8;
@@ -133,7 +135,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(451, 13);
+            this.label3.Location = new System.Drawing.Point(566, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(16, 16);
             this.label3.TabIndex = 11;
@@ -144,19 +146,39 @@
             this.cmbOperation.FormattingEnabled = true;
             this.cmbOperation.Items.AddRange(new object[] {
             "+",
-            "-"});
-            this.cmbOperation.Location = new System.Drawing.Point(320, 120);
+            "-",
+            "Скалярное произведение",
+            "Векторное произведение"});
+            this.cmbOperation.Location = new System.Drawing.Point(318, 122);
             this.cmbOperation.Name = "cmbOperation";
-            this.cmbOperation.Size = new System.Drawing.Size(75, 24);
+            this.cmbOperation.Size = new System.Drawing.Size(188, 24);
             this.cmbOperation.TabIndex = 12;
             this.cmbOperation.Text = "+";
             this.cmbOperation.SelectedIndexChanged += new System.EventHandler(this.cmbOperation_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(331, 245);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 16);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Произведение:";
+            // 
+            // txtMulti
+            // 
+            this.txtMulti.Location = new System.Drawing.Point(482, 239);
+            this.txtMulti.Name = "txtMulti";
+            this.txtMulti.Size = new System.Drawing.Size(100, 22);
+            this.txtMulti.TabIndex = 14;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 296);
+            this.ClientSize = new System.Drawing.Size(631, 289);
+            this.Controls.Add(this.txtMulti);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbOperation);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -192,6 +214,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbOperation;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtMulti;
     }
 }
 

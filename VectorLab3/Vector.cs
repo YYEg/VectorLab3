@@ -49,5 +49,20 @@ namespace VectorLab3
         {
             return instance1 - instance2.coordinate;
         }
+        //Операции умножения векторов
+        public static Vector operator *(Vector instance, double number)
+        {
+            var newCoordinate = instance.coordinate * number;
+            var coordinateX2 = new Vector(newCoordinate);
+            return coordinateX2;
+        }
+        public static Vector operator *(double number, Vector instance)
+        {
+            return instance * number;
+        }
+        public static Vector operator *(Vector instance1, Vector instance2)
+        {
+            return instance1 * instance2.coordinate;
+        }
     }
 }

@@ -37,28 +37,43 @@ namespace VectorLab3
                 Vector sumVectorX;
                 Vector sumVectorY;
                 Vector sumVectorZ;
+                Vector multiVector;
                 switch(cmbOperation.Text)
                 {
                     case "+":
                         sumVectorX = firstVectorCoordinateX + secondVectorCoordinateX;
                         sumVectorY = firstVectorCoordinateY + secondVectorCoordinateY;
                         sumVectorZ = firstVectorCoordinateZ + secondVectorCoordinateZ;
+                        multiVector = new Vector(0);
                         break;
                     case "-":
                         sumVectorX = firstVectorCoordinateX - secondVectorCoordinateX;
                         sumVectorY = firstVectorCoordinateY - secondVectorCoordinateY;
                         sumVectorZ = firstVectorCoordinateZ - secondVectorCoordinateZ;
+                        multiVector = new Vector(0);
+                        break;
+                    case "Скалярное произведение":
+                        sumVectorX = firstVectorCoordinateX * secondVectorCoordinateX;
+                        sumVectorY = firstVectorCoordinateY * secondVectorCoordinateY;
+                        sumVectorZ = firstVectorCoordinateZ * secondVectorCoordinateZ;
+                        multiVector = sumVectorX + sumVectorY + sumVectorZ;
+                        sumVectorX = new Vector(0);
+                        sumVectorY = new Vector(0);
+                        sumVectorZ = new Vector(0);
+
                         break;
                     default:
                         sumVectorX = new Vector(0);
                         sumVectorY = new Vector(0);
                         sumVectorZ = new Vector(0);
+                        multiVector = new Vector(0);
                         break;
                 }
 
                 txtXResult.Text = Convert.ToString(sumVectorX.Verbose());
                 txtYResult.Text = Convert.ToString(sumVectorY.Verbose());
                 txtZResult.Text = Convert.ToString(sumVectorZ.Verbose());
+                txtMulti.Text = Convert.ToString(multiVector.Verbose());
             }
             catch (FormatException)
             {
