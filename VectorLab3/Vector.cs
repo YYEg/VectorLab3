@@ -6,21 +6,19 @@ using System.Threading.Tasks;
 
 namespace VectorLab3
 {
-    public enum CoordinateType {x, y, z};
-    internal class Vector
+    public class Vector
     {
         private double coordinate;
-        private CoordinateType type;
 
-        public Vector(double coordinate, CoordinateType type)
+        public Vector(double coordinate)
         {
             this.coordinate = coordinate;
-            this.type = type;
         }
 
-        public string Verbose()
+        public double Verbose()
         {
-            string typeVerbose = "";
+            return this.coordinate;
         }
+        
     }
 }
