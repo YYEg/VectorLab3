@@ -19,6 +19,23 @@ namespace VectorLab3
         {
             return this.coordinate;
         }
-        
+        //Операция сложения векторов
+        public static Vector operator +(Vector instance, Vector secondIstance)
+        {
+            var newCoordinate = instance.coordinate + secondIstance.coordinate;
+            var coordinateX2 = new Vector(newCoordinate);
+            return coordinateX2;
+        }
+        //Операция вычитания векторов
+        public static Vector operator -(Vector instance, double number)
+        {
+            var newCoordinate = instance.coordinate - number;
+            var coordinateX2 = new Vector(newCoordinate);
+            return coordinateX2;
+        }
+        public static Vector operator -(double number, Vector instance)
+        {
+            return instance - number;
+        }
     }
 }

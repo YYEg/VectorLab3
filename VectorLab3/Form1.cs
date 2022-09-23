@@ -16,5 +16,33 @@ namespace VectorLab3
         {
             InitializeComponent();
         }
+
+        private void txtXFirst_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var firstCoordinateX = double.Parse(txtXFirst.Text);
+                var firstCoordinateY = double.Parse(txtYFirst.Text);
+                var firstCoordinateZ = double.Parse(txtZFirst.Text);
+                var secondCoordinateX = double.Parse(txtXSecond.Text);
+                var secondCoordinateY = double.Parse(txtYSecond.Text);
+                var secondCoordinateZ = double.Parse(txtZSecond.Text);
+
+                var firstVectorCoordinateX = new Vector(firstCoordinateX);
+                var firstVectorCoordinateY = new Vector(firstCoordinateY);
+                var firstVectorCoordinateZ = new Vector(firstCoordinateZ);
+                var secondVectorCoordinateX = new Vector(secondCoordinateX);
+                var secondVectorCoordinateY = new Vector(secondCoordinateY);
+                var secondVectorCoordinateZ = new Vector(secondCoordinateZ);
+
+                var sumVectorX = firstVectorCoordinateX + secondVectorCoordinateX;
+                var sumVectorY = firstVectorCoordinateY + secondVectorCoordinateY;
+                var sumVectorZ = firstCoordinateZ + secondCoordinateZ;
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
