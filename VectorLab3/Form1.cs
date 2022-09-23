@@ -34,9 +34,27 @@ namespace VectorLab3
                 var secondVectorCoordinateY = new Vector(secondCoordinateY);
                 var secondVectorCoordinateZ = new Vector(secondCoordinateZ);
 
-                var sumVectorX = firstVectorCoordinateX + secondVectorCoordinateX;
-                var sumVectorY = firstVectorCoordinateY + secondVectorCoordinateY;
-                var sumVectorZ = firstVectorCoordinateZ + secondVectorCoordinateZ;
+                Vector sumVectorX;
+                Vector sumVectorY;
+                Vector sumVectorZ;
+                switch(cmbOperation.Text)
+                {
+                    case "+":
+                        sumVectorX = firstVectorCoordinateX + secondVectorCoordinateX;
+                        sumVectorY = firstVectorCoordinateY + secondVectorCoordinateY;
+                        sumVectorZ = firstVectorCoordinateZ + secondVectorCoordinateZ;
+                        break;
+                    case "-":
+                        sumVectorX = firstVectorCoordinateX - secondVectorCoordinateX;
+                        sumVectorY = firstVectorCoordinateY - secondVectorCoordinateY;
+                        sumVectorZ = firstVectorCoordinateZ - secondVectorCoordinateZ;
+                        break;
+                    default:
+                        sumVectorX = new Vector(0);
+                        sumVectorY = new Vector(0);
+                        sumVectorZ = new Vector(0);
+                        break;
+                }
 
                 txtXResult.Text = Convert.ToString(sumVectorX.Verbose());
                 txtYResult.Text = Convert.ToString(sumVectorY.Verbose());
@@ -74,6 +92,11 @@ namespace VectorLab3
         }
 
         private void txtZSecond_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private void cmbOperation_SelectedIndexChanged(object sender, EventArgs e)
         {
             Calculate();
         }

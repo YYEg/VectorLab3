@@ -142,10 +142,15 @@
             // cmbOperation
             // 
             this.cmbOperation.FormattingEnabled = true;
+            this.cmbOperation.Items.AddRange(new object[] {
+            "+",
+            "-"});
             this.cmbOperation.Location = new System.Drawing.Point(320, 120);
             this.cmbOperation.Name = "cmbOperation";
             this.cmbOperation.Size = new System.Drawing.Size(75, 24);
             this.cmbOperation.TabIndex = 12;
+            this.cmbOperation.Text = "+";
+            this.cmbOperation.SelectedIndexChanged += new System.EventHandler(this.cmbOperation_SelectedIndexChanged);
             // 
             // Form1
             // 
