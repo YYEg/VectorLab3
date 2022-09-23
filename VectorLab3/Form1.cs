@@ -37,29 +37,31 @@ namespace VectorLab3
                 Vector sumVectorX;
                 Vector sumVectorY;
                 Vector sumVectorZ;
+                Vector multiVectorX;
+                Vector multiVectorY;
+                Vector multiVectorZ;
                 Vector multiVector;
+                Vector lenght;
                 switch(cmbOperation.Text)
                 {
                     case "+":
                         sumVectorX = firstVectorCoordinateX + secondVectorCoordinateX;
                         sumVectorY = firstVectorCoordinateY + secondVectorCoordinateY;
                         sumVectorZ = firstVectorCoordinateZ + secondVectorCoordinateZ;
-                        multiVector = new Vector(0);
+                        multiVector = sumVectorX + sumVectorY + sumVectorZ;
+                        multiVectorX = firstVectorCoordinateX * secondVectorCoordinateX;
+                        multiVectorY = firstVectorCoordinateY * secondVectorCoordinateY;
+                        multiVectorZ = firstVectorCoordinateZ * secondVectorCoordinateZ;
+                        multiVector = multiVectorX + multiVectorY + multiVectorZ;
                         break;
                     case "-":
                         sumVectorX = firstVectorCoordinateX - secondVectorCoordinateX;
                         sumVectorY = firstVectorCoordinateY - secondVectorCoordinateY;
                         sumVectorZ = firstVectorCoordinateZ - secondVectorCoordinateZ;
-                        multiVector = new Vector(0);
-                        break;
-                    case "Скалярное произведение":
-                        sumVectorX = firstVectorCoordinateX * secondVectorCoordinateX;
-                        sumVectorY = firstVectorCoordinateY * secondVectorCoordinateY;
-                        sumVectorZ = firstVectorCoordinateZ * secondVectorCoordinateZ;
-                        multiVector = sumVectorX + sumVectorY + sumVectorZ;
-                        sumVectorX = new Vector(0);
-                        sumVectorY = new Vector(0);
-                        sumVectorZ = new Vector(0);
+                        multiVectorX = firstVectorCoordinateX * secondVectorCoordinateX;
+                        multiVectorY = firstVectorCoordinateY * secondVectorCoordinateY;
+                        multiVectorZ = firstVectorCoordinateZ * secondVectorCoordinateZ;
+                        multiVector = multiVectorX + multiVectorY + multiVectorZ;
                         break;
                     case "Векторное произведение":
                         sumVectorX = (firstVectorCoordinateY * secondVectorCoordinateZ) - (firstVectorCoordinateZ * secondVectorCoordinateY);
