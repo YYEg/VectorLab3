@@ -22,8 +22,7 @@ namespace VectorLab3.Tests
         public void VectorCoordinateSum()
         {
             var coordinateX = new Vector(3);
-            var coordinateX2 = new Vector(3);
-            coordinateX = coordinateX + coordinateX2;
+            coordinateX = coordinateX + 3;
             Assert.AreEqual(6, coordinateX.Verbose());
         }
 
@@ -31,9 +30,15 @@ namespace VectorLab3.Tests
         public void VectorCoordinateDelete()
         {
             var coordinateX = new Vector(3);
-            var coordinateX2 = new Vector(1);
-            coordinateX = coordinateX - coordinateX2;
-            Assert.AreEqual(2, coordinateX.Verbose());
+            coordinateX = coordinateX - 3;
+            Assert.AreEqual(6, coordinateX.Verbose());
+        }
+        [TestMethod()]
+        public void TwoVectorCoordinateSum()
+        {
+            var w = new Vector(3);
+            var e = new Vector(3);
+            Assert.AreEqual(6, (w+e).Verbose());
         }
     }
 }

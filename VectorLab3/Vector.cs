@@ -17,14 +17,22 @@ namespace VectorLab3
 
         public double Verbose()
         {
-            return this.coordinate;
+            return String.Format(this.coordinate);
         }
         //Операция сложения векторов
-        public static Vector operator +(Vector instance, Vector secondIstance)
+        public static Vector operator +(Vector instance, double number)
         {
-            var newCoordinate = instance.coordinate + secondIstance.coordinate;
+            var newCoordinate = instance.coordinate + number;
             var coordinateX2 = new Vector(newCoordinate);
             return coordinateX2;
+        }
+        public static Vector operator +(double number, Vector instance)
+        {
+            return instance + number;
+        }
+        public static Vector operator+(Vector instance1, Vector instance2)
+        {
+            return instance1 + instance2;
         }
         //Операция вычитания векторов
         public static Vector operator -(Vector instance, double number)
@@ -36,6 +44,10 @@ namespace VectorLab3
         public static Vector operator -(double number, Vector instance)
         {
             return instance - number;
+        }
+        public static Vector operator-(Vector instance1, Vector instance2)
+        {
+            return instance1 - instance2;
         }
     }
 }

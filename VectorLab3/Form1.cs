@@ -37,7 +37,10 @@ namespace VectorLab3
 
                 var sumVectorX = firstVectorCoordinateX + secondVectorCoordinateX;
                 var sumVectorY = firstVectorCoordinateY + secondVectorCoordinateY;
+                
                 var sumVectorZ = firstCoordinateZ + secondCoordinateZ;
+
+                txtXResult.Text = sumVectorX.Verbose();
             }
             catch
             {
