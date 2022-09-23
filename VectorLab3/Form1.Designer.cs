@@ -57,6 +57,7 @@
             this.txtYFirst.Name = "txtYFirst";
             this.txtYFirst.Size = new System.Drawing.Size(44, 22);
             this.txtYFirst.TabIndex = 1;
+            this.txtYFirst.TextChanged += new System.EventHandler(this.txtYFirst_TextChanged);
             // 
             // txtZFirst
             // 
@@ -64,6 +65,7 @@
             this.txtZFirst.Name = "txtZFirst";
             this.txtZFirst.Size = new System.Drawing.Size(44, 22);
             this.txtZFirst.TabIndex = 2;
+            this.txtZFirst.TextChanged += new System.EventHandler(this.txtZFirst_TextChanged);
             // 
             // txtXSecond
             // 
@@ -71,6 +73,7 @@
             this.txtXSecond.Name = "txtXSecond";
             this.txtXSecond.Size = new System.Drawing.Size(44, 22);
             this.txtXSecond.TabIndex = 3;
+            this.txtXSecond.TextChanged += new System.EventHandler(this.txtXSecond_TextChanged);
             // 
             // txtYSecond
             // 
@@ -78,6 +81,7 @@
             this.txtYSecond.Name = "txtYSecond";
             this.txtYSecond.Size = new System.Drawing.Size(44, 22);
             this.txtYSecond.TabIndex = 4;
+            this.txtYSecond.TextChanged += new System.EventHandler(this.txtYSecond_TextChanged);
             // 
             // txtZSecond
             // 
@@ -85,6 +89,7 @@
             this.txtZSecond.Name = "txtZSecond";
             this.txtZSecond.Size = new System.Drawing.Size(44, 22);
             this.txtZSecond.TabIndex = 5;
+            this.txtZSecond.TextChanged += new System.EventHandler(this.txtZSecond_TextChanged);
             // 
             // txtXResult
             // 

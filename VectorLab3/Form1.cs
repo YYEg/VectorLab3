@@ -16,8 +16,7 @@ namespace VectorLab3
         {
             InitializeComponent();
         }
-
-        private void txtXFirst_TextChanged(object sender, EventArgs e)
+        private void Calculate()
         {
             try
             {
@@ -37,15 +36,46 @@ namespace VectorLab3
 
                 var sumVectorX = firstVectorCoordinateX + secondVectorCoordinateX;
                 var sumVectorY = firstVectorCoordinateY + secondVectorCoordinateY;
-                
-                var sumVectorZ = firstCoordinateZ + secondCoordinateZ;
+                var sumVectorZ = firstVectorCoordinateZ + secondVectorCoordinateZ;
 
-                txtXResult.Text = sumVectorX.Verbose();
+                txtXResult.Text = Convert.ToString(sumVectorX.Verbose());
+                txtYResult.Text = Convert.ToString(sumVectorY.Verbose());
+                txtZResult.Text = Convert.ToString(sumVectorZ.Verbose());
             }
-            catch
+            catch (FormatException)
             {
 
             }
+        }
+
+        private void txtXFirst_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private void txtXSecond_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private void txtYFirst_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private void txtYSecond_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private void txtZFirst_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
+        }
+
+        private void txtZSecond_TextChanged(object sender, EventArgs e)
+        {
+            Calculate();
         }
     }
 }
