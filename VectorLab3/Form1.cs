@@ -60,7 +60,12 @@ namespace VectorLab3
                         sumVectorX = new Vector(0);
                         sumVectorY = new Vector(0);
                         sumVectorZ = new Vector(0);
-
+                        break;
+                    case "Векторное произведение":
+                        sumVectorX = (firstVectorCoordinateY * secondVectorCoordinateZ) - (firstVectorCoordinateZ * secondVectorCoordinateY);
+                        sumVectorY = (firstVectorCoordinateZ * secondVectorCoordinateX) - (firstVectorCoordinateX * secondVectorCoordinateZ);
+                        sumVectorZ = (firstVectorCoordinateX * secondVectorCoordinateY) - (firstVectorCoordinateY * secondVectorCoordinateX);
+                        multiVector = new Vector(0);
                         break;
                     default:
                         sumVectorX = new Vector(0);
