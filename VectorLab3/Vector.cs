@@ -14,10 +14,24 @@ namespace VectorLab3
         {
             this.coordinate = coordinate;
         }
-
+        //Операция возвращения значения
         public double Verbose()
         {
             return this.coordinate;
+        }
+        //Возведение в степень
+        public static Vector Extent(Vector number, double powNumber)
+        {
+            var newNumber = Math.Pow(number.coordinate, powNumber);
+            var extentNumber = new Vector(newNumber);
+            return extentNumber;
+        }
+        //Корень квадратный
+        public static Vector Radical(Vector number)
+        {
+            var newNumber = Math.Sqrt(number.coordinate);
+            var extentNumber = new Vector(newNumber);
+            return extentNumber;
         }
         //Операция сложения векторов
         public static Vector operator +(Vector instance, double number)
@@ -64,5 +78,6 @@ namespace VectorLab3
         {
             return instance1 * instance2.coordinate;
         }
+        
     }
 }
