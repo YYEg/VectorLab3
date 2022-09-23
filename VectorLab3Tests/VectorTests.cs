@@ -15,7 +15,7 @@ namespace VectorLab3.Tests
         public void VerboseTest()
         {
             var coordinateX = new Vector(3);
-            Assert.AreEqual(3, coordinateX);
+            Assert.AreEqual(3, coordinateX.Verbose());
         }
     }
 }
