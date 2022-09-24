@@ -41,9 +41,9 @@ namespace VectorLab3
                 Vector multiVectorY;
                 Vector multiVectorZ;
                 Vector multiVector;
-                Vector lenghtOfVectorFirst;
-                Vector lenghtOfVectorSecond;
-                Vector lenghtOfVectorResult;
+                Vector lengthOfVectorFirst;
+                Vector lengthOfVectorSecond;
+                Vector lengthOfVectorResult;
                 switch (cmbOperation.Text)
                 {
                     case "+":
@@ -55,11 +55,11 @@ namespace VectorLab3
                         multiVectorY = firstVectorCoordinateY * secondVectorCoordinateY;
                         multiVectorZ = firstVectorCoordinateZ * secondVectorCoordinateZ;
                         multiVector = multiVectorX + multiVectorY + multiVectorZ;
-                        lenghtOfVectorFirst = new Vector(Math.Sqrt(Math.Pow(firstCoordinateX, 2)
+                        lengthOfVectorFirst = new Vector(Math.Sqrt(Math.Pow(firstCoordinateX, 2)
                         + Math.Pow(firstCoordinateY, 2) + Math.Pow(firstCoordinateZ, 2)));
-                        lenghtOfVectorSecond = new Vector(Math.Sqrt(Math.Pow(secondCoordinateX, 2)
+                        lengthOfVectorSecond = new Vector(Math.Sqrt(Math.Pow(secondCoordinateX, 2)
                         + Math.Pow(secondCoordinateY, 2) + Math.Pow(secondCoordinateZ, 2)));
-                        lenghtOfVectorResult = new Vector(Math.Sqrt(Math.Pow(firstCoordinateX + secondCoordinateX, 2)
+                        lengthOfVectorResult = new Vector(Math.Sqrt(Math.Pow(firstCoordinateX + secondCoordinateX, 2)
                         + Math.Pow(firstCoordinateY + secondCoordinateY, 2) + Math.Pow(firstCoordinateZ + secondCoordinateZ, 2)));
 
                         break;
@@ -71,11 +71,11 @@ namespace VectorLab3
                         multiVectorY = firstVectorCoordinateY * secondVectorCoordinateY;
                         multiVectorZ = firstVectorCoordinateZ * secondVectorCoordinateZ;
                         multiVector = multiVectorX + multiVectorY + multiVectorZ;
-                        lenghtOfVectorFirst = new Vector(Math.Sqrt(Math.Pow(firstCoordinateX, 2)
+                        lengthOfVectorFirst = new Vector(Math.Sqrt(Math.Pow(firstCoordinateX, 2)
                         + Math.Pow(firstCoordinateY, 2) + Math.Pow(firstCoordinateZ, 2)));
-                        lenghtOfVectorSecond = new Vector(Math.Sqrt(Math.Pow(secondCoordinateX, 2)
+                        lengthOfVectorSecond = new Vector(Math.Sqrt(Math.Pow(secondCoordinateX, 2)
                         + Math.Pow(secondCoordinateY, 2) + Math.Pow(secondCoordinateZ, 2)));
-                        lenghtOfVectorResult = new Vector(Math.Sqrt(Math.Pow(firstCoordinateX - secondCoordinateX, 2)
+                        lengthOfVectorResult = new Vector(Math.Sqrt(Math.Pow(firstCoordinateX - secondCoordinateX, 2)
                         + Math.Pow(firstCoordinateY - secondCoordinateY, 2) + Math.Pow(firstCoordinateZ - secondCoordinateZ, 2)));
                         break;
                     case "Векторное произведение":
@@ -86,11 +86,11 @@ namespace VectorLab3
                         multiVectorY = firstVectorCoordinateY * secondVectorCoordinateY;
                         multiVectorZ = firstVectorCoordinateZ * secondVectorCoordinateZ;
                         multiVector = multiVectorX + multiVectorY + multiVectorZ;
-                        lenghtOfVectorFirst = new Vector(Math.Sqrt(Math.Pow(firstCoordinateX, 2)
+                        lengthOfVectorFirst = new Vector(Math.Sqrt(Math.Pow(firstCoordinateX, 2)
                         + Math.Pow(firstCoordinateY, 2) + Math.Pow(firstCoordinateZ, 2)));
-                        lenghtOfVectorSecond = new Vector(Math.Sqrt(Math.Pow(secondCoordinateX, 2)
+                        lengthOfVectorSecond = new Vector(Math.Sqrt(Math.Pow(secondCoordinateX, 2)
                         + Math.Pow(secondCoordinateY, 2) + Math.Pow(secondCoordinateZ, 2)));
-                        lenghtOfVectorResult = Vector.Radical(Vector.Extent(sumVectorX, 2)
+                        lengthOfVectorResult = Vector.Radical(Vector.Extent(sumVectorX, 2)
                         + Vector.Extent(sumVectorY, 2) + Vector.Extent(sumVectorZ, 2));
                         break;
                     default:
@@ -98,9 +98,9 @@ namespace VectorLab3
                         sumVectorY = new Vector(0);
                         sumVectorZ = new Vector(0);
                         multiVector = new Vector(0);
-                        lenghtOfVectorFirst = new Vector(0);
-                        lenghtOfVectorSecond = new Vector(0);
-                        lenghtOfVectorResult = new Vector(0);
+                        lengthOfVectorFirst = new Vector(0);
+                        lengthOfVectorSecond = new Vector(0);
+                        lengthOfVectorResult = new Vector(0);
                         break;
                 }
 
@@ -108,9 +108,9 @@ namespace VectorLab3
                 txtYResult.Text = Convert.ToString(sumVectorY.Verbose());
                 txtZResult.Text = Convert.ToString(sumVectorZ.Verbose());
                 txtMulti.Text = Convert.ToString(multiVector.Verbose());
-                txtLenghtFirst.Text = Convert.ToString(lenghtOfVectorFirst.Verbose());
-                textLenghtSecond.Text = Convert.ToString(lenghtOfVectorSecond.Verbose());
-                txtLengtResult.Text = Convert.ToString(lenghtOfVectorResult.Verbose());
+                txtLenghtFirst.Text = Convert.ToString(lengthOfVectorFirst.Verbose());
+                textLenghtSecond.Text = Convert.ToString(lengthOfVectorSecond.Verbose());
+                txtLengtResult.Text = Convert.ToString(lengthOfVectorResult.Verbose());
             }
             catch (FormatException)
             {
