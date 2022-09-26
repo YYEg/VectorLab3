@@ -16,4 +16,5 @@ namespace VectorLab3
         {
             InitializeComponent();
         }
+    }
 }
