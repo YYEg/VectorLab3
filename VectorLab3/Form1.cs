@@ -32,6 +32,7 @@ namespace VectorLab3
                 var secondVector = new Vector(secondX, secondY, secondZ);
 
                 Vector resultVector;
+                double multiVector;
                 switch (cmbOperation.Text)
                 {
                     case "+":
@@ -39,18 +40,28 @@ namespace VectorLab3
                         txtResultX.Text = resultVector.VerboseX();
                         txtResultY.Text = resultVector.VerboseY();
                         txtResultZ.Text = resultVector.VerboseZ();
+                        txtDotMulti.Text = Convert.ToString(multiVector = Vector.DotProductOfVector(firstVector, secondVector));
+                        txtLengthFirst.Text = Convert.ToString(multiVector = Vector.VectorLength(firstVector));
+                        txtLengthSecond.Text = Convert.ToString(multiVector = Vector.VectorLength(secondVector));
+                        txtLengthResult.Text = Convert.ToString(multiVector = Vector.VectorLength(resultVector));
                         break;
                     case "-":
                         resultVector = Vector.VectorMinus(firstVector, secondVector);
                         txtResultX.Text = resultVector.VerboseX();
                         txtResultY.Text = resultVector.VerboseY();
                         txtResultZ.Text = resultVector.VerboseZ();
+                        txtLengthFirst.Text = Convert.ToString(multiVector = Vector.VectorLength(firstVector));
+                        txtLengthSecond.Text = Convert.ToString(multiVector = Vector.VectorLength(secondVector));
+                        txtLengthResult.Text = Convert.ToString(multiVector = Vector.VectorLength(resultVector));
                         break;
                     case "Векторное произведение":
                         resultVector = Vector.VectorMultiOfVectors(firstVector, secondVector);
                         txtResultX.Text = resultVector.VerboseX();
                         txtResultY.Text = resultVector.VerboseY();
                         txtResultZ.Text = resultVector.VerboseZ();
+                        txtLengthFirst.Text = Convert.ToString(multiVector = Vector.VectorLength(firstVector));
+                        txtLengthSecond.Text = Convert.ToString(multiVector = Vector.VectorLength(secondVector));
+                        txtLengthResult.Text = Convert.ToString(multiVector = Vector.VectorLength(resultVector));
                         break;
                     default:
                         firstVector = new Vector(0, 0, 0);

@@ -71,12 +71,5 @@ namespace VectorLab3
             return vectorC;
 
         }
-        public static double MultiOfVector(Vector vectorA, Vector vectorB)
-        {
-            var cosinusValue = DotProductOfVector(vectorA, vectorB) / (VectorLength(vectorA) * VectorLength(vectorB));
-            var sinusValue = Math.Sqrt(1 - Math.Pow(cosinusValue, 2));
-            var multiOfVector = VectorLength(vectorA) * VectorLength(vectorB) * sinusValue;
-            return multiOfVector;
-        }
     }
 }
