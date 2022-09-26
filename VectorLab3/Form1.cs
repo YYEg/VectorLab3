@@ -16,5 +16,22 @@ namespace VectorLab3
         {
             InitializeComponent();
         }
+
+        private void Calculate()
+        {
+            try
+            {
+
+            }
+            catch(FormatException)
+            {
+
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
