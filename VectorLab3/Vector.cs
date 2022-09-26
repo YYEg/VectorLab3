@@ -67,7 +67,7 @@ namespace VectorLab3
             Vector vectorC = new Vector(0, 0, 0);
             vectorC.coordinateX = vectorA.coordinateY * vectorB.coordinateZ - vectorA.coordinateZ * vectorB.coordinateY;
             vectorC.coordinateY = vectorA.coordinateZ * vectorB.coordinateX - vectorA.coordinateX * vectorB.coordinateZ;
-            vectorC.coordinateZ = vectorA.coordinateX * vectorB.coordinateY - vectorA.coordinateY * vectorB.coordinateZ;
+            vectorC.coordinateZ = vectorA.coordinateX * vectorB.coordinateY - vectorA.coordinateY * vectorB.coordinateX;
             return vectorC;
 
         }
