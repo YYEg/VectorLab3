@@ -40,7 +40,21 @@ namespace VectorLab3
                         txtResultY.Text = resultVector.VerboseY();
                         txtResultZ.Text = resultVector.VerboseZ();
                         break;
+                    case "-":
+                        resultVector = Vector.VectorMinus(firstVector, secondVector);
+                        txtResultX.Text = resultVector.VerboseX();
+                        txtResultY.Text = resultVector.VerboseY();
+                        txtResultZ.Text = resultVector.VerboseZ();
+                        break;
+                    case "Векторное произведение":
+                        resultVector = Vector.VectorMultiOfVectors(firstVector, secondVector);
+                        txtResultX.Text = resultVector.VerboseX();
+                        txtResultY.Text = resultVector.VerboseY();
+                        txtResultZ.Text = resultVector.VerboseZ();
+                        break;
                     default:
+                        firstVector = new Vector(0, 0, 0);
+                        secondVector = new Vector(0, 0, 0);
                         break;
                 }
             }
@@ -52,37 +66,37 @@ namespace VectorLab3
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            Calculate();
         }
 
         private void cmbOperation_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Calculate();
         }
 
         private void txtFirstY_TextChanged(object sender, EventArgs e)
         {
-
+            Calculate();
         }
 
         private void txtFirstZ_TextChanged(object sender, EventArgs e)
         {
-
+            Calculate();
         }
 
         private void txtSecondX_TextChanged(object sender, EventArgs e)
         {
-
+            Calculate();
         }
 
         private void txtSecondY_TextChanged(object sender, EventArgs e)
         {
-
+            Calculate();
         }
 
         private void txtSecondZ_TextChanged(object sender, EventArgs e)
         {
-
+            Calculate();
         }
     }
 }
