@@ -31,13 +31,13 @@
             this.txtFirstX = new System.Windows.Forms.TextBox();
             this.txtFirstY = new System.Windows.Forms.TextBox();
             this.txtFirstZ = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtSecondX = new System.Windows.Forms.TextBox();
+            this.txtSecondY = new System.Windows.Forms.TextBox();
+            this.txtSecondZ = new System.Windows.Forms.TextBox();
+            this.cmbOperation = new System.Windows.Forms.ComboBox();
+            this.txtResultX = new System.Windows.Forms.TextBox();
+            this.txtResultY = new System.Windows.Forms.TextBox();
+            this.txtResultZ = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -58,6 +58,7 @@
             this.txtFirstY.Name = "txtFirstY";
             this.txtFirstY.Size = new System.Drawing.Size(44, 22);
             this.txtFirstY.TabIndex = 1;
+            this.txtFirstY.TextChanged += new System.EventHandler(this.txtFirstY_TextChanged);
             // 
             // txtFirstZ
             // 
@@ -65,56 +66,66 @@
             this.txtFirstZ.Name = "txtFirstZ";
             this.txtFirstZ.Size = new System.Drawing.Size(44, 22);
             this.txtFirstZ.TabIndex = 2;
+            this.txtFirstZ.TextChanged += new System.EventHandler(this.txtFirstZ_TextChanged);
             // 
-            // textBox4
+            // txtSecondX
             // 
-            this.textBox4.Location = new System.Drawing.Point(187, 45);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(44, 22);
-            this.textBox4.TabIndex = 3;
+            this.txtSecondX.Location = new System.Drawing.Point(187, 45);
+            this.txtSecondX.Name = "txtSecondX";
+            this.txtSecondX.Size = new System.Drawing.Size(44, 22);
+            this.txtSecondX.TabIndex = 3;
+            this.txtSecondX.TextChanged += new System.EventHandler(this.txtSecondX_TextChanged);
             // 
-            // textBox5
+            // txtSecondY
             // 
-            this.textBox5.Location = new System.Drawing.Point(187, 97);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(44, 22);
-            this.textBox5.TabIndex = 4;
+            this.txtSecondY.Location = new System.Drawing.Point(187, 97);
+            this.txtSecondY.Name = "txtSecondY";
+            this.txtSecondY.Size = new System.Drawing.Size(44, 22);
+            this.txtSecondY.TabIndex = 4;
+            this.txtSecondY.TextChanged += new System.EventHandler(this.txtSecondY_TextChanged);
             // 
-            // textBox6
+            // txtSecondZ
             // 
-            this.textBox6.Location = new System.Drawing.Point(187, 152);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(44, 22);
-            this.textBox6.TabIndex = 5;
+            this.txtSecondZ.Location = new System.Drawing.Point(187, 152);
+            this.txtSecondZ.Name = "txtSecondZ";
+            this.txtSecondZ.Size = new System.Drawing.Size(44, 22);
+            this.txtSecondZ.TabIndex = 5;
+            this.txtSecondZ.TextChanged += new System.EventHandler(this.txtSecondZ_TextChanged);
             // 
-            // comboBox1
+            // cmbOperation
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(296, 97);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 6;
+            this.cmbOperation.FormattingEnabled = true;
+            this.cmbOperation.Items.AddRange(new object[] {
+            "+",
+            "-",
+            "Векторное произведение"});
+            this.cmbOperation.Location = new System.Drawing.Point(296, 97);
+            this.cmbOperation.Name = "cmbOperation";
+            this.cmbOperation.Size = new System.Drawing.Size(121, 24);
+            this.cmbOperation.TabIndex = 6;
+            this.cmbOperation.Text = "+";
+            this.cmbOperation.SelectedIndexChanged += new System.EventHandler(this.cmbOperation_SelectedIndexChanged);
             // 
-            // textBox7
+            // txtResultX
             // 
-            this.textBox7.Location = new System.Drawing.Point(481, 45);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(44, 22);
-            this.textBox7.TabIndex = 7;
+            this.txtResultX.Location = new System.Drawing.Point(481, 45);
+            this.txtResultX.Name = "txtResultX";
+            this.txtResultX.Size = new System.Drawing.Size(44, 22);
+            this.txtResultX.TabIndex = 7;
             // 
-            // textBox8
+            // txtResultY
             // 
-            this.textBox8.Location = new System.Drawing.Point(481, 99);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(44, 22);
-            this.textBox8.TabIndex = 8;
+            this.txtResultY.Location = new System.Drawing.Point(481, 99);
+            this.txtResultY.Name = "txtResultY";
+            this.txtResultY.Size = new System.Drawing.Size(44, 22);
+            this.txtResultY.TabIndex = 8;
             // 
-            // textBox9
+            // txtResultZ
             // 
-            this.textBox9.Location = new System.Drawing.Point(481, 152);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(44, 22);
-            this.textBox9.TabIndex = 9;
+            this.txtResultZ.Location = new System.Drawing.Point(481, 152);
+            this.txtResultZ.Name = "txtResultZ";
+            this.txtResultZ.Size = new System.Drawing.Size(44, 22);
+            this.txtResultZ.TabIndex = 9;
             // 
             // textBox10
             // 
@@ -153,13 +164,13 @@
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtResultZ);
+            this.Controls.Add(this.txtResultY);
+            this.Controls.Add(this.txtResultX);
+            this.Controls.Add(this.cmbOperation);
+            this.Controls.Add(this.txtSecondZ);
+            this.Controls.Add(this.txtSecondY);
+            this.Controls.Add(this.txtSecondX);
             this.Controls.Add(this.txtFirstZ);
             this.Controls.Add(this.txtFirstY);
             this.Controls.Add(this.txtFirstX);
@@ -175,13 +186,13 @@
         private System.Windows.Forms.TextBox txtFirstX;
         private System.Windows.Forms.TextBox txtFirstY;
         private System.Windows.Forms.TextBox txtFirstZ;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtSecondX;
+        private System.Windows.Forms.TextBox txtSecondY;
+        private System.Windows.Forms.TextBox txtSecondZ;
+        private System.Windows.Forms.ComboBox cmbOperation;
+        private System.Windows.Forms.TextBox txtResultX;
+        private System.Windows.Forms.TextBox txtResultY;
+        private System.Windows.Forms.TextBox txtResultZ;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
