@@ -34,26 +34,24 @@ namespace VectorLab3.Tests
         {
             var vectorA = new Vector(3, 4, 5);
             var vectorB = new Vector(3, 4, 5);
-            var vectorC = Vector.VectorSum(vectorA, vectorB);
-            Assert.AreEqual("6", vectorC.VerboseX());
-            Assert.AreEqual("8", vectorC.VerboseY());
-            Assert.AreEqual("10", vectorC.VerboseZ());
+            var resultVector = vectorA + vectorB;
+            Assert.AreEqual(new Vector(6, 8, 10), resultVector);
         }
+
         [TestMethod()]
         public void MinusTest()
         {
             var vectorA = new Vector(3, 4, 5);
             var vectorB = new Vector(3, 4, 5);
-            var vectorC = Vector.VectorMinus(vectorA, vectorB);
-            Assert.AreEqual("0", vectorC.VerboseX());
-            Assert.AreEqual("0", vectorC.VerboseY());
-            Assert.AreEqual("0", vectorC.VerboseZ());
+            var resultVector = vectorA - vectorB;
+            Assert.AreEqual(new Vector(0, 0, 0), resultVector);
         }
+
         [TestMethod()]
         public void LengthTest()
         {
             var vectorC = new Vector(0, 3, 4);
-            var length = Vector.VectorLength(vectorC);
+            var length = vectorC.VectorLength();
             Assert.AreEqual(5, length);
         }
         [TestMethod()]
@@ -61,18 +59,17 @@ namespace VectorLab3.Tests
         {
             var vectorA = new Vector(1, 2, 3);
             var vectorB = new Vector(1, 2, 3);
-            var vectorC = Vector.DotProductOfVector(vectorA, vectorB);
+            var vectorC = vectorB.DotProductOfVector(vectorA);
             Assert.AreEqual(14, vectorC);
         }
+
         [TestMethod()]
         public void MultiTest()
         {
             var vectorA = new Vector(1, 3, 5);
             var vectorB = new Vector(2, 4, 6);
-            var vectorC = Vector.VectorMultiOfVectors(vectorA, vectorB);
-            Assert.AreEqual("-2", vectorC.VerboseX());
-            Assert.AreEqual("4", vectorC.VerboseY());
-            Assert.AreEqual("-2", vectorC.VerboseZ());
+            var resultVector = vectorA * vectorB;
+            Assert.AreEqual(new Vector(-2, 4, -2), resultVector);
         }
     }
 }

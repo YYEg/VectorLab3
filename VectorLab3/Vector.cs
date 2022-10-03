@@ -33,20 +33,26 @@ namespace VectorLab3
         }
         public static Vector operator +(Vector vectorA, Vector vectorB)
         {
-            Vector vectorC = new Vector(vectorA.x + vectorB.x,
-            vectorA.y + vectorB.y, vectorA.z + vectorB.z);
+            Vector vectorC = new Vector(0, 0, 0);
+            vectorC.x = vectorA.x + vectorB.x;
+            vectorC.y = vectorA.y + vectorB.y;
+            vectorC.z = vectorA.z + vectorB.z;
             return vectorC;
         }
         public static Vector operator -(Vector vectorA, Vector vectorB)
         {
-            Vector vectorC = new Vector(vectorA.x - vectorB.x,
-            vectorA.y - vectorB.y, vectorA.z - vectorB.z);
+            Vector vectorC = new Vector(0, 0, 0);
+            vectorC.x = vectorA.x - vectorB.x;
+            vectorC.y = vectorA.y - vectorB.y;
+            vectorC.z = vectorA.z - vectorB.z;
             return vectorC;
         }
         public static Vector operator *(Vector vectorA, Vector vectorB)
         {
-            Vector vectorC = new Vector(vectorA.y * vectorB.z - vectorA.z * vectorB.y,
-            vectorA.z * vectorB.x - vectorA.x * vectorB.z, vectorA.x * vectorB.y - vectorA.y * vectorB.x);
+            Vector vectorC = new Vector(0, 0, 0);
+            vectorC.x = vectorA.y * vectorB.z - vectorA.z * vectorB.y;
+            vectorC.y = vectorA.z * vectorB.x - vectorA.x * vectorB.z;
+            vectorC.z = vectorA.x * vectorB.y - vectorA.y * vectorB.x;
             return vectorC;
         }
         public double VectorLength()
@@ -59,6 +65,14 @@ namespace VectorLab3
             double dotProduct = vectorA.x * this.x
             + vectorA.y * this.y + vectorA.z * this.z;
             return dotProduct;
+        }
+
+        public override bool Equals(object obj)
+        {
+            Vector other = obj as Vector;
+            if (other == null)
+                return false;
+            return other.x == this.x && other.y == this.y && other.z == this.z;
         }
     }
 }
