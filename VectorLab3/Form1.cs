@@ -32,36 +32,39 @@ namespace VectorLab3
                 var secondVector = new Vector(secondX, secondY, secondZ);
 
                 Vector resultVector;
+                Vector dotSum = new Vector(0, 0, 0);
                 double multiVector;
                 switch (cmbOperation.Text)
                 {
                     case "+":
-                        resultVector = Vector.VectorSum(firstVector, secondVector);
+                        resultVector = firstVector + secondVector;
                         txtResultX.Text = resultVector.VerboseX();
                         txtResultY.Text = resultVector.VerboseY();
                         txtResultZ.Text = resultVector.VerboseZ();
-                        txtDotMulti.Text = Convert.ToString(multiVector = Vector.DotProductOfVector(firstVector, secondVector));
-                        txtLengthFirst.Text = Convert.ToString(multiVector = Vector.VectorLength(firstVector));
-                        txtLengthSecond.Text = Convert.ToString(multiVector = Vector.VectorLength(secondVector));
-                        txtLengthResult.Text = Convert.ToString(multiVector = Vector.VectorLength(resultVector));
+                        txtDotMulti.Text = Convert.ToString(multiVector = secondVector.DotProductOfVector(firstVector));
+                        txtLengthFirst.Text = Convert.ToString(multiVector = firstVector.VectorLength());
+                        txtLengthSecond.Text = Convert.ToString(multiVector = secondVector.VectorLength());
+                        txtLengthResult.Text = Convert.ToString(multiVector = resultVector.VectorLength());
                         break;
                     case "-":
-                        resultVector = Vector.VectorMinus(firstVector, secondVector);
+                        resultVector = firstVector - secondVector;
                         txtResultX.Text = resultVector.VerboseX();
                         txtResultY.Text = resultVector.VerboseY();
                         txtResultZ.Text = resultVector.VerboseZ();
-                        txtLengthFirst.Text = Convert.ToString(multiVector = Vector.VectorLength(firstVector));
-                        txtLengthSecond.Text = Convert.ToString(multiVector = Vector.VectorLength(secondVector));
-                        txtLengthResult.Text = Convert.ToString(multiVector = Vector.VectorLength(resultVector));
+                        txtDotMulti.Text = Convert.ToString(multiVector = secondVector.DotProductOfVector(firstVector));
+                        txtLengthFirst.Text = Convert.ToString(multiVector = firstVector.VectorLength());
+                        txtLengthSecond.Text = Convert.ToString(multiVector = secondVector.VectorLength());
+                        txtLengthResult.Text = Convert.ToString(multiVector = resultVector.VectorLength());
                         break;
                     case "Векторное произведение":
-                        resultVector = Vector.VectorMultiOfVectors(firstVector, secondVector);
+                        resultVector = firstVector * secondVector;
                         txtResultX.Text = resultVector.VerboseX();
                         txtResultY.Text = resultVector.VerboseY();
                         txtResultZ.Text = resultVector.VerboseZ();
-                        txtLengthFirst.Text = Convert.ToString(multiVector = Vector.VectorLength(firstVector));
-                        txtLengthSecond.Text = Convert.ToString(multiVector = Vector.VectorLength(secondVector));
-                        txtLengthResult.Text = Convert.ToString(multiVector = Vector.VectorLength(resultVector));
+                        txtDotMulti.Text = Convert.ToString(multiVector = secondVector.DotProductOfVector(firstVector));
+                        txtLengthFirst.Text = Convert.ToString(multiVector = firstVector.VectorLength());
+                        txtLengthSecond.Text = Convert.ToString(multiVector = secondVector.VectorLength());
+                        txtLengthResult.Text = Convert.ToString(multiVector = resultVector.VectorLength());
                         break;
                     default:
                         firstVector = new Vector(0, 0, 0);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtFirstX = new System.Windows.Forms.TextBox();
             this.txtFirstY = new System.Windows.Forms.TextBox();
             this.txtFirstZ = new System.Windows.Forms.TextBox();
@@ -229,6 +230,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(582, 382);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);

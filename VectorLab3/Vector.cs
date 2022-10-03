@@ -8,68 +8,57 @@ namespace VectorLab3
 {
     public class Vector
     {
-        private double coordinateX;
-        private double coordinateY;
-        private double coordinateZ;
+        private double x;
+        private double y;
+        private double z;
 
         public Vector(double coordinateX, double coordinateY, double coordinateZ)
         {
-            this.coordinateX = coordinateX;
-            this.coordinateY = coordinateY;
-            this.coordinateZ = coordinateZ;
+            this.x = coordinateX;
+            this.y = coordinateY;
+            this.z = coordinateZ;
         }
         //Операция возвращения значения
         public string VerboseX()
         {
-            return String.Format("{0}", this.coordinateX);
+            return String.Format("{0}", this.x);
         }
         public string VerboseY()
         {
-            return String.Format("{0}", this.coordinateY);
+            return String.Format("{0}", this.y);
         }
         public string VerboseZ()
         {
-            return String.Format("{0}", this.coordinateZ);
+            return String.Format("{0}", this.z);
         }
-
-        public static Vector VectorSum(Vector vectorA, Vector vectorB)
+        public static Vector operator +(Vector vectorA, Vector vectorB)
         {
-            Vector vectorC = new Vector(0, 0, 0);
-            vectorC.coordinateX = vectorA.coordinateX + vectorB.coordinateX;
-            vectorC.coordinateY = vectorA.coordinateY + vectorB.coordinateY;
-            vectorC.coordinateZ = vectorA.coordinateZ + vectorB.coordinateZ;
+            Vector vectorC = new Vector(vectorA.x + vectorB.x,
+            vectorA.y + vectorB.y, vectorA.z + vectorB.z);
             return vectorC;
         }
-
-        public static Vector VectorMinus(Vector vectorA, Vector vectorB)
+        public static Vector operator -(Vector vectorA, Vector vectorB)
         {
-            Vector vectorC = new Vector(0, 0, 0);
-            vectorC.coordinateX = vectorA.coordinateX - vectorB.coordinateX;
-            vectorC.coordinateY = vectorA.coordinateY - vectorB.coordinateY;
-            vectorC.coordinateZ = vectorA.coordinateZ - vectorB.coordinateZ;
+            Vector vectorC = new Vector(vectorA.x - vectorB.x,
+            vectorA.y - vectorB.y, vectorA.z - vectorB.z);
             return vectorC;
         }
-
-        public static double VectorLength(Vector vector)
+        public static Vector operator *(Vector vectorA, Vector vectorB)
         {
-            var length = Math.Sqrt(Math.Pow(vector.coordinateX, 2) + Math.Pow(vector.coordinateY, 2) + Math.Pow(vector.coordinateZ, 2));
+            Vector vectorC = new Vector(vectorA.y * vectorB.z - vectorA.z * vectorB.y,
+            vectorA.z * vectorB.x - vectorA.x * vectorB.z, vectorA.x * vectorB.y - vectorA.y * vectorB.x);
+            return vectorC;
+        }
+        public double VectorLength()
+        {
+            var length = Math.Sqrt(Math.Pow(this.x, 2) + Math.Pow(this.y, 2) + Math.Pow(this.z, 2));
             return length;
         }
-        public static double DotProductOfVector(Vector vectorA, Vector vectorB)
+        public double DotProductOfVector(Vector vectorA)
         {
-            double dotProduct = vectorA.coordinateX * vectorB.coordinateX
-            + vectorA.coordinateY * vectorB.coordinateY + vectorA.coordinateZ * vectorB.coordinateZ;
+            double dotProduct = vectorA.x * this.x
+            + vectorA.y * this.y + vectorA.z * this.z;
             return dotProduct;
-        }
-
-        public static Vector VectorMultiOfVectors(Vector vectorA, Vector vectorB)
-        {
-            Vector vectorC = new Vector(0, 0, 0);
-            vectorC.coordinateX = vectorA.coordinateY * vectorB.coordinateZ - vectorA.coordinateZ * vectorB.coordinateY;
-            vectorC.coordinateY = vectorA.coordinateZ * vectorB.coordinateX - vectorA.coordinateX * vectorB.coordinateZ;
-            vectorC.coordinateZ = vectorA.coordinateX * vectorB.coordinateY - vectorA.coordinateY * vectorB.coordinateX;
-            return vectorC;
-
         }
     }
 }
