@@ -41,30 +41,30 @@ namespace VectorLab3
                         txtResultX.Text = resultVector.VerboseX();
                         txtResultY.Text = resultVector.VerboseY();
                         txtResultZ.Text = resultVector.VerboseZ();
-                        txtDotMulti.Text = Convert.ToString(multiVector = secondVector.DotProductOfVector(firstVector));
-                        txtLengthFirst.Text = Convert.ToString(multiVector = firstVector.VectorLength());
-                        txtLengthSecond.Text = Convert.ToString(multiVector = secondVector.VectorLength());
-                        txtLengthResult.Text = Convert.ToString(multiVector = resultVector.VectorLength());
+                        txtDotMulti.Text = Convert.ToString(secondVector.DotProductOfVector(firstVector));
+                        txtLengthFirst.Text = Convert.ToString(firstVector.VectorLength());
+                        txtLengthSecond.Text = Convert.ToString(secondVector.VectorLength());
+                        txtLengthResult.Text = Convert.ToString(resultVector.VectorLength());
                         break;
                     case "-":
                         resultVector = firstVector - secondVector;
                         txtResultX.Text = resultVector.VerboseX();
                         txtResultY.Text = resultVector.VerboseY();
                         txtResultZ.Text = resultVector.VerboseZ();
-                        txtDotMulti.Text = Convert.ToString(multiVector = secondVector.DotProductOfVector(firstVector));
-                        txtLengthFirst.Text = Convert.ToString(multiVector = firstVector.VectorLength());
-                        txtLengthSecond.Text = Convert.ToString(multiVector = secondVector.VectorLength());
-                        txtLengthResult.Text = Convert.ToString(multiVector = resultVector.VectorLength());
+                        txtDotMulti.Text = Convert.ToString(secondVector.DotProductOfVector(firstVector));
+                        txtLengthFirst.Text = Convert.ToString(firstVector.VectorLength());
+                        txtLengthSecond.Text = Convert.ToString(secondVector.VectorLength());
+                        txtLengthResult.Text = Convert.ToString(resultVector.VectorLength());
                         break;
                     case "Векторное произведение":
                         resultVector = firstVector * secondVector;
                         txtResultX.Text = resultVector.VerboseX();
                         txtResultY.Text = resultVector.VerboseY();
                         txtResultZ.Text = resultVector.VerboseZ();
-                        txtDotMulti.Text = Convert.ToString(multiVector = secondVector.DotProductOfVector(firstVector));
-                        txtLengthFirst.Text = Convert.ToString(multiVector = firstVector.VectorLength());
-                        txtLengthSecond.Text = Convert.ToString(multiVector = secondVector.VectorLength());
-                        txtLengthResult.Text = Convert.ToString(multiVector = resultVector.VectorLength());
+                        txtDotMulti.Text = Convert.ToString(secondVector.DotProductOfVector(firstVector));
+                        txtLengthFirst.Text = Convert.ToString(firstVector.VectorLength());
+                        txtLengthSecond.Text = Convert.ToString(secondVector.VectorLength());
+                        txtLengthResult.Text = Convert.ToString(resultVector.VectorLength());
                         break;
                     default:
                         firstVector = new Vector(0, 0, 0);
